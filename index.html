@@ -105,16 +105,16 @@
         let str;
         print();
 
-        function getItem()
-        {
-            arr=localStorage.getItem('todo')?JSON.parse(localStorage.getItem('todo')):[]
-        }
+        // function getItem()
+        // {
+        //     arr=localStorage.getItem('todo')?JSON.parse(localStorage.getItem('todo')):[]
+        // }
 
 
-        function setItem()
-        {
-            localStorage.setItem('todo',JSON.stringify(arr))
-        }
+        // function setItem()
+        // {
+        //     localStorage.setItem('todo',JSON.stringify(arr))
+        // }
 
 
         document.getElementById('btn').addEventListener('click', () => {
@@ -131,7 +131,7 @@
                 alert('Enter value')
             }
             count++;
-            setItem()
+            // setItem()
             print();
         })
 
@@ -139,7 +139,7 @@
             arr = arr.filter((ele) => {
                 return ele.id != id1;
             })
-            setItem()
+            // setItem()
             print()
         }
 
@@ -154,7 +154,7 @@
             document.getElementById('btn2').addEventListener('click', () => {
                 document.getElementById('btn').style.display = "inline"
                 document.getElementById('btn2').style.display = "none"
-                arr.filter((ele) => {
+                arr = arr.filter((ele) => {
                     if (ele.id == id1) {
                         return  ele.task = document.getElementById('text').value;   
                     }
@@ -163,14 +163,14 @@
                     }
                 })
                 document.getElementById('text').value = "";
-                setItem()
+                // setItem()
                 print()
             })
         }
 
 
         function print() {
-            getItem()
+            // getItem()
             if (arr != '') {
                 str = "";
                 arr.map((ele) => {
@@ -189,7 +189,7 @@
         }
         document.getElementById('clear').addEventListener('click', () => {
             arr = [];
-            setItem();
+            // setItem();
             print()
 
         })
